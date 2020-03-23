@@ -22,7 +22,7 @@
                     var x=document.getElementById('data').insertRow();
                     var row = rows[i];
                     var values = row.split("\t");
-                    if(values.length > 0) {
+                    if(values.length > 1) {
                         var cell=x.insertCell();
                         cell.innerHTML = i + 1;
                         for(var j=0;j < values.length;j++){
@@ -41,7 +41,7 @@
                                         issueName = value.substr(value.lastIndexOf("/")+1);
                                     }
                                     console.log("link:" + link + " issueName:"+ issueName);
-                                    cell.innerHTML = "<a href=\"" + link + "\">" + issueName + "</a>";
+                                    cell.innerHTML = document.createElement("<a href=\"" + link + "\">" + issueName + "</a>");
                                 }
                             }
                         cell.innerHTML=values[j];
