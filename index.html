@@ -29,9 +29,8 @@
                             //console.log("value num:" + values.length);
                             var value = values[j];
                             cell=x.insertCell();
-                            if(j == 1) {
+                            if(j == 1 && value.indexOf("http") > -1) {
                                 //console.log("http index value:" + value.indexOf("http"));
-                                if(value.indexOf("http") > -1) {
                                     var link, issueName;
                                     if (value.indexOf(",") > 0) {
                                         link = value.split(",")[0];
@@ -45,7 +44,6 @@
                                     var htmlString = "<a href=\"" + link + "\">" + issueName + "</a>";
                                     console.log("htmlString:"+htmlString);
                                     cell.innerHTML = htmlString;
-                                }
                             } else {
                                 cell.innerHTML=values[j];}
                         }
