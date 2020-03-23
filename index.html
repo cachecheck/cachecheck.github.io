@@ -16,7 +16,7 @@
             success:function (data) {
                 //console.log(data);
                 //var data = eval('('+data+')');
-                var rows = data.split("\r\n");
+                var rows = data.split("\n");
                 console.log("data num:" + rows.length);
                 for(var i=0;i < rows.length;i++){
                     var x=document.getElementById('data').insertRow();
