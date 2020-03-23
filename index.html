@@ -6,6 +6,12 @@
 <title>CACHECHECK_STATICS</title> 
 <!--*<script language="jquery-3.4.1.min.js">-->
 <script>
+    function parseDom(arg) {
+        var objE = document.createElement("div");
+        objE.innerHTML = arg;
+        return objE.childNodes;
+    }
+
     window.onload=function(){
         console.log("begin!");
         $.ajax({
@@ -40,7 +46,8 @@
                                         issueName = value.substr(value.lastIndexOf("/")+1);
                                     }
                                     //console.log("link:" + link + " issueName:"+ issueName);
-                                    cell.innerHTML = $("<a href=\"" + link + "\">" + issueName + "</a>").html();
+                                    //cell.innerHTML = $("<a href=\"" + link + "\">" + issueName + "</a>").html();
+                                    cell.innerHTML = parseDom("<a href=\"" + link + "\">" + issueName + "</a>");
                                 }
                             } else {
                                 cell.innerHTML=values[j];}
@@ -49,7 +56,7 @@
                 }
            }
         });
-        console.log("end!");
+        console.log("end1!");
     }
 </script>
 </head>
