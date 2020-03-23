@@ -41,7 +41,8 @@
                                         issueName = value.substr(value.lastIndexOf("/")+1);
                                     }
                                     console.log("link:" + link + " issueName:"+ issueName);
-                                    cell.innerHTML = $("<a href=\"" + link + "\">" + issueName + "</a>").html();
+                                    cell.innerText = "<a href=\"" + link + "\">" + issueName + "</a>";
+                                    //cell.innerHTML = $("<a href=\"" + link + "\">" + issueName + "</a>").html();
                                 }
                             }
                         cell.innerHTML=values[j];
