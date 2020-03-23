@@ -22,14 +22,15 @@
                     var x=document.getElementById('data').insertRow();
                     var row = rows[i];
                     var values = row.split("\t");
-                    var cell=x.insertCell();
-                    cell.innerHTML = i + 1;
+                    if(values.length > 0) {
+                        var cell=x.insertCell();
+                        cell.innerHTML = i + 1;
                     for(var j=0;j < values.length;j++){
                         console.log("value num:" + values.length);
                         var value = values[j];
                         cell=x.insertCell();
                         if(j == 1) {
-                            if(value.indexOf("http") > 0) {
+                            if(value.indexOf("http") > -1) {
                                 var link, issueName;
                                 if (value.indexOf(",") > 0) {
                                     link = value.split(",")[0];
@@ -42,6 +43,7 @@
                             }
                         }
                         cell.innerHTML=values[j];
+                    }
                     }
                 }
            }
@@ -58,8 +60,8 @@
     <th>Project</th>
     <th>Issue ID</th>
     <th>Bug type</th>
-    <th>Related RDD variable</th>
     <th>Location</th>
+    <th>Related RDD variable</th>
     <th>Status</th>
     <th>Fixed</th>
   </tr>
